@@ -76,9 +76,21 @@ python3 main.py --data data --rounds 50 --C 0.1 --E 5 --K 100 \
 
 In order to run the above algorithm variants for different client fractions (`C`) and local epochs (`E`), please change the arguments `--C` to 0.1, 0.3 and 0.5 and `--E` to 1, 5 and 20 respectively. Please refer to the paper appendix for other hyperparameters such as batch size (`bs`), client learning (`client_lr`), server learning rate (`server_lr`) and proximal term (`mu`) for different model and algorithm variants.
 
+Important Arguments:
+- `model_type`: different model variants to use for experiments
+- `rounds`: number of federated training rounds
+- `C`: client fraction for each federated training round
+- `K`: number of clients for iid partition
+- `E`: number of local training epochs on local dataset for each round
+- `algorithm`: local client updates aggregation strategy to follow on server
+- `mu`: proximal term constant acting as regularizer to ensure the local client updates to be similar to global model
+- `client_lr`: learning rate on client devices
+- `server_lr`: learning rate on server
+
 Note: The models can be trained centrally by setting the `--C` parameter to 1.0 and `--K` to 1.
 
 ## Todos
 
 - [ ] Add data preparation instruction in the README
+- [ ] Add LICENSE in the README
 - [ ] Add citation bibtex in the README
