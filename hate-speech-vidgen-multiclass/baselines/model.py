@@ -50,7 +50,9 @@ class LSTM(nn.Module):
 
     def forward(self, text, text_len):
         text_emb = self.embedding(text)
-        packed_input = pack_padded_sequence(text_emb, text_len.detach().cpu(), batch_first=True, enforce_sorted=False)
+        packed_input = pack_padded_sequence(
+            text_emb, text_len.detach().cpu(), batch_first=True, enforce_sorted=False,
+        )
         packed_output, _ = self.lstm(packed_input)
         output, _ = pad_packed_sequence(packed_output, batch_first=True)
 

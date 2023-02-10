@@ -1,9 +1,7 @@
 import torch
 
-categories = [
-    "hate", 
-    "nothate"
-]
+categories = ["hate", "nothate"]
+
 
 def create_data_iter(df, category_dict, tokenizer, input_col="text", target_col="category"):
     r""" Creates data iterator as list of tuple consisting of `text` and `category`.

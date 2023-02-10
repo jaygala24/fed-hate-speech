@@ -27,7 +27,9 @@ def create_data_iter(df, category_dict, input_col="text", target_col="category")
     # iterate over the data and tokenize the samples
     iterator = []
     for i in range(len(df)):
-        iterator.append({"text": df[input_col].iloc[i].lower(), "label": df[target_col].iloc[i]})
+        iterator.append(
+            {"text": df[input_col].iloc[i].lower(), "label": df[target_col].iloc[i],}
+        )
     return iterator
 
 
@@ -39,7 +41,9 @@ def build_vocab(iterator, tokenizer):
         for item in iterator:
             yield tokenizer(item["text"])
 
-    vocab = build_vocab_from_iterator(yield_tokens(iterator, tokenizer), specials=["<pad>", "<unk>"])
+    vocab = build_vocab_from_iterator(
+        yield_tokens(iterator, tokenizer), specials=["<pad>", "<unk>"]
+    )
     vocab.set_default_index(vocab["<unk>"])
     return vocab
 

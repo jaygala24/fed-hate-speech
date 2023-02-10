@@ -24,4 +24,8 @@ def pad_collate(batch):
     labels = [item["labels"] for item in batch]
     input_ids_len = torch.tensor([len(x) for x in input_ids], dtype=torch.int64)
     input_ids_padded = pad_sequence(input_ids, batch_first=True, padding_value=0)
-    return {"input_ids": input_ids_padded, "labels": torch.tensor(labels), "input_ids_len": input_ids_len}
+    return {
+        "input_ids": input_ids_padded,
+        "labels": torch.tensor(labels),
+        "input_ids_len": input_ids_len,
+    }
