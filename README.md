@@ -24,8 +24,41 @@ Note: We recommend creating a virtual environment to run the experiments.
 
 ## Data Preparation
 
-Please refer to the paper for the complete details on the schema normalization and data pre-processing steps for different datasets.
+Please refer to the paper for the complete details on the schema normalization and data splitting for different datasets used in this study.
 
+Each dataset should be stored in its named directory in the root directory of this project with separate data files for train, validation and test splits. Each split should be in CSV format and contains the following fields: `text`, `category`, and `dataset`. Please note that `dataset` field indicates the name of the dataset and is only included for dataset-specific analysis.
+
+Here are the split-wise number of examples across different datasets:
+
+| dataset                | train   | valid  | test   |
+|------------------------|---------|--------|--------|
+| comb-data              | 184,778 | 20,527 | 87,993 |
+| vidgen-binary-data     | 33,006  | 4,125  | 4,124  |
+| vidgen-multiclass-data | 33,006  | 4,125  | 4,124  |
+
+Here is the expected directory structure of the project:
+```
+fed-hate-speech/
+├── comb-data/
+│   ├── train.csv
+│   ├── valid.csv
+│   └── test.csv
+├── vidgen-binary-data/
+│   ├── train.csv
+│   ├── valid.csv
+│   └── test.csv
+├── vidgen-multiclass-data/
+│   ├── train.csv
+│   ├── valid.csv
+│   └── test.csv
+├── data.py
+├── main.py
+├── trainer.py
+├── utils.py
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
 
 ## Running Experiments
 
@@ -36,7 +69,7 @@ We experiment with two federated learning algorithm (`FedProx` and `FedOPT`) and
 In order to train the federated transformer-based `DistilBERT` model using `FedProx` algorithm for a client fraction of 10% and 5 local epochs on the combined dataset, run the following command in the `transformers` directory:
 
 ```
-python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
+python3 main.py --data comb-data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
                 --algorithm fedprox --mu 0.01 --client_lr 4e-5 --server_lr 0.0 \
                 --model distilbert --batch_size 32 --seed 42 --class_weights \
                 --save distilbert_fedprox_c0.1_e05_k100_r50_class_weighted
@@ -45,7 +78,7 @@ python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 10
 In order to train the federated baseline `LSTM` model using `FedProx` algorithm for a client fraction of 10% and 5 local epochs on the combined dataset, run the following command in the `baselines` directory:
 
 ```
-python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
+python3 main.py --data comb-data --dataset_type comb --rounds 300 --C 0.1 --E 5 --K 100 \
                 --algorithm fedprox --mu 0.01 --client_lr 1e-3 --server_lr 0.0 \
                 --model distilbert --batch_size 128 --seed 42 --class_weights \
                 --save lstm_fedprox_c0.1_e05_k100_r50_class_weighted
@@ -56,7 +89,7 @@ python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 10
 In order to train the federated transformer-based `DistilBERT` model using `FedOPT` algorithm for a client fraction of 10% and 5 local epochs on the combined dataset, run the following command in the `transformers` directory:
 
 ```
-python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
+python3 main.py --data comb-data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
                 --algorithm fedopt --mu 0.0 --client_lr 4e-5 --server_lr 1e-3 \
                 --model distilbert --batch_size 32 --seed 42 --class_weights \
                 --save distilbert_fedopt_c0.1_e05_k100_r50_class_weighted
@@ -65,7 +98,7 @@ python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 10
 In order to train the federated baseline `LSTM` model using `FedProx` algorithm for a client fraction of 10% and 5 local epochs on the combined dataset, run the following command in the `baselines` directory:
 
 ```
-python3 main.py --data data --dataset_type comb --rounds 50 --C 0.1 --E 5 --K 100 \
+python3 main.py --data comb-data --dataset_type comb --rounds 300 --C 0.1 --E 5 --K 100 \
                 --algorithm fedopt --mu 0.0 --client_lr 1e-3 --server_lr 1e-2 \
                 --model distilbert --batch_size 128 --seed 42 --class_weights \
                 --save lstm_fedopt_c0.1_e05_k100_r50_class_weighted
