@@ -122,11 +122,24 @@ Important Arguments:
 - `client_lr`: learning rate on client devices
 - `server_lr`: learning rate on server
 
-Note: The models can be trained centrally by setting the `--C` parameter to 1.0 and `--K` to 1.
+Note: The models can be trained centrally by setting the arguments `--C` to 1.0 and `--K` to 1.
 
+
+## License
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 ## Todos
 
 - [x] Add data preparation instruction in the README
-- [ ] Add LICENSE in the README
+- [x] Add LICENSE in the README
 - [ ] Add citation bibtex in the README
