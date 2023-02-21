@@ -138,8 +138,24 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
+ ## Citation
+
+```
+@inproceedings{fedspeech2023
+    title = "A Federated Approach for Hate Speech Detection",
+    author = "Gala Jay  and
+      Gandhi, Deep and
+      Mehta, Jash  and
+      Talat, Zeerak",
+    booktitle = "Proceedings of the The 17th Conference of the European Chapter of the Association for Computational Linguistics",
+    year = "2023",
+    publisher = "Association for Computational Linguistics",
+    url = "https://arxiv.org/abs/2302.09243"
+}
+```
+
 ## Todos
 
 - [x] Add data preparation instruction in the README
 - [x] Add LICENSE in the README
-- [ ] Add citation bibtex in the README
+- [x] Add citation bibtex in the README
