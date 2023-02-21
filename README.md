@@ -140,7 +140,7 @@ This work is licensed under a
 
  ## Citation
 
-```
+```bibtex
 @inproceedings{fedspeech2023
     title = "A Federated Approach for Hate Speech Detection",
     author = "Gala Jay  and
