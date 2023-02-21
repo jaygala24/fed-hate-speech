@@ -1,6 +1,6 @@
 # Fed Hate Speech
 
-The official code repository associated with the paper titled "A Federated Approach for Hate Speech Detection" (EACL 2023).
+The official code repository associated with the paper titled ["A Federated Approach for Hate Speech Detection"](https://arxiv.org/abs/2302.09243) (EACL 2023).
 
 ## Overview
 
@@ -153,9 +153,3 @@ This work is licensed under a
     url = "https://arxiv.org/abs/2302.09243"
 }
 ```
-
-## Todos
-
-- [x] Add data preparation instruction in the README
-- [x] Add LICENSE in the README
-- [x] Add citation bibtex in the README
