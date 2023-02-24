@@ -143,7 +143,7 @@ This work is licensed under a
 ```bibtex
 @inproceedings{fedspeech2023
     title = "A Federated Approach for Hate Speech Detection",
-    author = "Gala Jay  and
+    author = "Gala, Jay  and
       Gandhi, Deep and
       Mehta, Jash  and
       Talat, Zeerak",
