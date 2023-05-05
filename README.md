@@ -141,15 +141,18 @@ This work is licensed under a
  ## Citation
 
 ```bibtex
-@inproceedings{fedspeech2023
+@inproceedings{gala-etal-2023-federated,
     title = "A Federated Approach for Hate Speech Detection",
     author = "Gala, Jay  and
-      Gandhi, Deep and
+      Gandhi, Deep  and
       Mehta, Jash  and
       Talat, Zeerak",
-    booktitle = "Proceedings of the The 17th Conference of the European Chapter of the Association for Computational Linguistics",
+    booktitle = "Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics",
+    month = may,
     year = "2023",
+    address = "Dubrovnik, Croatia",
     publisher = "Association for Computational Linguistics",
-    url = "https://arxiv.org/abs/2302.09243"
+    url = "https://aclanthology.org/2023.eacl-main.237",
+    pages = "3248--3259",
 }
 ```
